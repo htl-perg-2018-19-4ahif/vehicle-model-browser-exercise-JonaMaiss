@@ -1,0 +1,9 @@
+<br><br>
+<select [(ngModel)]='years'>
+  <option *ngFor='let y of years;' value={{y}}>{{y}}</option>
+</select>
+<select [(ngModel)]='makes'>
+  <option *ngFor='let m of makes;' value={{m}}>{{m}}</option>
+</select>
+
+<router-outlet></router-outlet>
