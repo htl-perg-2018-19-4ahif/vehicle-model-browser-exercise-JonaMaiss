@@ -1,9 +1,20 @@
 <br><br>
-<select [(ngModel)]='years'>
+Year:<select [(ngModel)]='yearChosen'>
   <option *ngFor='let y of years;' value={{y}}>{{y}}</option>
 </select>
-<select [(ngModel)]='makes'>
+Make:<select [(ngModel)]='makeChosen'>
   <option *ngFor='let m of makes;' value={{m}}>{{m}}</option>
 </select>
 
+<table>
+  <tr><button (click)='getCars()'>refresh</button></tr>
+
+<tr *ngFor='let car of models'>
+  <td>{{car.id}}</td>
+  <td>{{car.model}}</td>
+  <td>{{car.make}}</td>
+  <td>{{car.year}}</td>
+  <td>{{car.hasDetails}}</td>
+</tr>
+</table>
 <router-outlet></router-outlet>
