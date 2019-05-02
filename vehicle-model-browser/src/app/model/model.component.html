@@ -1,20 +1,25 @@
 <br><br>
 Year:<select [(ngModel)]='yearChosen'>
+  <option></option>
   <option *ngFor='let y of years;' value={{y}}>{{y}}</option>
 </select>
 Make:<select [(ngModel)]='makeChosen'>
+  <option></option>
   <option *ngFor='let m of makes;' value={{m}}>{{m}}</option>
 </select>
 
 <table>
   <tr><button (click)='getCars()'>refresh</button></tr>
 
-<tr *ngFor='let car of models'>
-  <td>{{car.id}}</td>
-  <td>{{car.model}}</td>
-  <td>{{car.make}}</td>
-  <td>{{car.year}}</td>
-  <td>{{car.hasDetails}}</td>
-</tr>
-</table>
+  <tr *ngFor='let car of models'>
+    <td>{{car.id}}</td>
+    <td>{{car.model}}</td>
+    <td>{{car.make}}</td>
+    <td>{{car.year}}</td>
+    <td>{{car.hasDetails}}</td>
+  </tr>
+</table><br>
+
+<button (click)='previousPage()' [hidden]='modelZero'>Previous Page</button>
+<button (click)='nextPage()' [hidden]='!stillModels'>Next Page</button>
 <router-outlet></router-outlet>
